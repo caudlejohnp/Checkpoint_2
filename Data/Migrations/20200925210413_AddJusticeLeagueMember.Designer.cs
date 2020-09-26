@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using capstone.Data;
 
 namespace capstone.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200925210413_AddJusticeLeagueMember")]
+    partial class AddJusticeLeagueMember
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -323,38 +325,6 @@ namespace capstone.Data.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("JusticeLeagueMembers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Age = 45,
-                            Alias = "Clark Kent",
-                            IsActiveMember = true,
-                            MemberSince = new DateTime(1950, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Superman",
-                            UserId = "56bdddab-0486-48db-9aa8-9e95dd50d60b"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Age = 43,
-                            Alias = "Bruce Wayne",
-                            IsActiveMember = true,
-                            MemberSince = new DateTime(1950, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Batman",
-                            UserId = "56bdddab-0486-48db-9aa8-9e95dd50d60b"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Age = 38,
-                            Alias = "Diana Prince",
-                            IsActiveMember = true,
-                            MemberSince = new DateTime(1950, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Wonder Woman",
-                            UserId = "56bdddab-0486-48db-9aa8-9e95dd50d60b"
-                        });
                 });
 
             modelBuilder.Entity("capstone.Models.Student", b =>
