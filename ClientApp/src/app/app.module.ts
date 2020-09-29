@@ -15,6 +15,7 @@ import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { TeacherComponent } from './teacher/teacher.component';
 import { JusticeLeagueComponent } from './justice-league/justice-league.component';
+import { LoginComponent } from '../api-authorization/login/login.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { JusticeLeagueComponent } from './justice-league/justice-league.componen
         { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
         { path: 'students', component: StudentsComponent, canActivate: [AuthorizeGuard] },
       { path: 'teachers', component: TeacherComponent, canActivate: [AuthorizeGuard] },
-      {path: 'justiceleague', component: JusticeLeagueComponent},
+      { path: 'justiceleague', component: JusticeLeagueComponent, canActivate: [AuthorizeGuard] },
+      { path: '**', component: LoginComponent },
     ])
   ],
   providers: [
