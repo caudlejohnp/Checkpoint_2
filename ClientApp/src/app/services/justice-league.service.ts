@@ -13,7 +13,7 @@ export class JusticeLeagueService {
   public async getMembers(): Promise<JusticeLeagueMember[]> {
     return this.httpClient.get<JusticeLeagueMember[]>(`${this.baseUrl}justiceleaguemember`).toPromise();
   }
-                                                   //(`${this.baseUrl}controllername`)
+                                                    //(`${this.baseUrl}controllername`)
   public async addMember(member: JusticeLeagueMember): Promise<JusticeLeagueMember> {
     return this.httpClient.post<JusticeLeagueMember>(`${this.baseUrl}justiceleaguemember`, member).toPromise();
   }
